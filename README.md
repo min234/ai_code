@@ -81,3 +81,27 @@ python cli.py analyze <project_path>
 # 의존성 점검
 python cli.py deps <project_path>
 ```
+
+## 테스트
+
+```bash
+# pytest 설치
+pip install pytest
+
+# 전체 테스트 실행
+pytest tests/ -v
+
+# 특정 모듈만 실행
+pytest tests/test_chuck.py -v
+```
+
+### 테스트 구조
+
+| 파일 | 테스트 대상 |
+|------|------------|
+| `tests/test_chuck.py` | 텍스트 분할 (chunk_by_chars, chunk_with_line_info) |
+| `tests/test_diff.py` | unified diff 생성 (make_unified_diff) |
+| `tests/test_file_utils.py` | 파일 읽기/리스팅 (read_file_safe, list_files) |
+| `tests/test_refactor_engine.py` | 코드 펜스 제거, 스니펫 병합 |
+| `tests/test_openai_client.py` | OpenAI 클라이언트 (mock 사용) |
+| `tests/test_deps_analyzer.py` | 텍스트 파일 수집 (collect_text_files) |
