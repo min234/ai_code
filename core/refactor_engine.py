@@ -112,7 +112,7 @@ def _call_model_for_snippet(
         "Now return ONLY the refactored snippet:"
     )
 
-    raw = ask_model(system_prompt=system_prompt, user_prompt=user_prompt, model="gpt-4o-mini")
+    raw: str = ask_model(system_prompt=system_prompt, user_prompt=user_prompt, model="gpt-4o-mini")  # type: ignore[assignment]
     cleaned = _strip_code_fences(raw)
     return _postprocess_snippet(snippet, cleaned)
 
@@ -204,7 +204,7 @@ def partial_refactor(
 def _call_model_for_full_refactor(system_prompt: str, user_prompt: str) -> str:
     """Wrapper for full-file refactoring model calls."""
     # The new ask_model takes separate system and user prompts
-    return ask_model(system_prompt=system_prompt, user_prompt=user_prompt, model="gpt-4o-mini")
+    return ask_model(system_prompt=system_prompt, user_prompt=user_prompt, model="gpt-4o-mini")  # type: ignore[return-value]
 
 def _build_dead_code_prompt(file_path: Path, code: str) -> str:
     """Builds the user prompt for the dead-code removal task."""

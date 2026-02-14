@@ -427,7 +427,7 @@ def run_tool_from_spec(spec: dict):
             try:
                 rel_path = file_path.relative_to(project_root)
             except ValueError:
-                rel_path = file_path.name
+                rel_path = Path(file_path.name)
 
             rel_str = str(rel_path)
             original_rel_paths.append(rel_str)

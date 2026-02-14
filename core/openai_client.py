@@ -55,12 +55,12 @@ def ask_model(
         {"role": "user", "content": user_prompt},
     ]
 
-    request_params = {"model": model, "messages": messages}
+    request_params: dict[str, Any] = {"model": model, "messages": messages}
 
     if response_format == "json_object":
         request_params["response_format"] = {"type": "json_object"}
 
-    response = client.chat.completions.create(**request_params)
+    response = client.chat.completions.create(**request_params)  # type: ignore[arg-type]
 
     content = response.choices[0].message.content
     if content is None:

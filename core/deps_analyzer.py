@@ -208,7 +208,7 @@ Task:
 - Return ONLY the full new file content (no explanation, no JSON wrapper).
 """
 
-        new_content = ask_model(
+        new_content: str = ask_model(  # type: ignore[assignment]
             system_prompt=system_prompt,
             user_prompt=user_prompt,
             model="gpt-4o",
