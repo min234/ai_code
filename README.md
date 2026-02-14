@@ -1,5 +1,7 @@
 # AI Code — AI-Powered Code Analysis Tool
 
+[![CI](https://github.com/min234/ai_code/actions/workflows/ci.yml/badge.svg)](https://github.com/min234/ai_code/actions/workflows/ci.yml)
+
 > 소스 코드를 분석하여 언어 변환, 리팩토링, 의존성 점검을 도와주는 CLI 도구
 
 프로젝트의 소스 코드를 AI로 분석하여 **언어 변환, 리팩토링, 의존성 점검**을 도와줍니다.
@@ -105,3 +107,4 @@ pytest tests/test_chuck.py -v
 | `tests/test_refactor_engine.py` | 코드 펜스 제거, 스니펫 병합 |
 | `tests/test_openai_client.py` | OpenAI 클라이언트 (mock 사용) |
 | `tests/test_deps_analyzer.py` | 텍스트 파일 수집 (collect_text_files) |
+| `tests/test_language_converter.py` | 언어 변환 (파일 직렬화, 프롬프트 빌드, 변환 실행) |
