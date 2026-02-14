@@ -108,3 +108,6 @@ pytest tests/test_chuck.py -v
 | `tests/test_openai_client.py` | OpenAI 클라이언트 (mock 사용) |
 | `tests/test_deps_analyzer.py` | 텍스트 파일 수집 (collect_text_files) |
 | `tests/test_language_converter.py` | 언어 변환 (파일 직렬화, 프롬프트 빌드, 변환 실행) |
+| `tests/conftest.py` | 공유 픽스처 (mock, tmp dirs) |
+| `tests/test_agent.py` | 에이전트 라우팅 및 툴 실행 |
+| `tests/test_cli.py` | CLI REPL 진입점 |
